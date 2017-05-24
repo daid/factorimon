@@ -4,6 +4,19 @@ alien_sensor_item.order = "z"
 data:extend({alien_sensor, alien_sensor_item})
 data:extend({
 {
+    type = "recipe",
+    name = "fm-alien-sensor",
+    enabled = false,
+    ingredients =
+    {
+        {"constant-combinator", 1},
+        {"electronic-circuit", 2},
+    },
+    result = "fm-alien-sensor"
+},
+})
+data:extend({
+{
     type = "virtual-signal",
     name = "fm-signal-male",
     icon = "__factorimon__/graphics/icons/signal/male.png",

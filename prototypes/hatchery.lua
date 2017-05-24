@@ -54,4 +54,17 @@ data:extend({
     place_result = "fm-hatchery",
     stack_size = 50
 },
+{
+    type = "recipe",
+    name = "fm-hatchery",
+    enabled = false,
+    ingredients =
+    {
+        {"electronic-circuit", 10},
+        {"iron-plate", 5},
+        {"stone-brick", 5},
+        {"copper-plate", 15},
+    },
+    result = "fm-hatchery"
+},
 })

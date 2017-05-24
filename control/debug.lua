@@ -9,7 +9,7 @@ if settings.global["fm-debug"].value then
     --Replace our starting ammo with stun ammo.
     script.on_event(defines.events.on_player_created, function(event)
         local player = game.players[event.player_index]
-        player.insert{name="fm-stun-ammo", count=player.remove_item{name="firearm-magazine", count=player.get_item_count("firearm-magazine")}}
+        player.insert{name="fm-stun-magazine", count=player.remove_item{name="firearm-magazine", count=player.get_item_count("firearm-magazine")}}
 
         --When debugging is enabled, give the player some starting equipment to quickly get going in testing things.
         player.insert("fm-breeder")
@@ -30,7 +30,7 @@ if settings.global["fm-debug"].value then
     end)
     script.on_event(defines.events.on_player_respawned, function(event)
         local player = game.players[event.player_index]
-        player.insert{name="fm-stun-ammo", count=player.remove_item{name="firearm-magazine", count=player.get_item_count("firearm-magazine")}}
+        player.insert{name="fm-stun-magazine", count=player.remove_item{name="firearm-magazine", count=player.get_item_count("firearm-magazine")}}
     end)
 
 end

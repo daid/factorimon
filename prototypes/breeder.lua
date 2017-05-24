@@ -47,6 +47,18 @@ data:extend({
     place_result = "fm-breeder",
     stack_size = 50
 },
+{
+    type = "recipe",
+    name = "fm-breeder",
+    enabled = false,
+    ingredients =
+    {
+        {"electronic-circuit", 4},
+        {"iron-plate", 2},
+        {"steel-plate", 1}
+    },
+    result = "fm-breeder"
+},
 
 {   --Area indicator shown below the breeder that it is active and what the area of influence is.
     type = "simple-entity",

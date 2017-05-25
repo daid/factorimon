@@ -9,7 +9,7 @@ data:extend({
     ammo_type =
     {
       category = "bullet",
-      cooldown_modifier = 3,
+      cooldown_modifier = 5,
       action =
       {
         {
@@ -38,7 +38,7 @@ data:extend({
         }
       }
     },
-    magazine_size = 10,
+    magazine_size = 2,
     subgroup = "ammo",
     order = "a[basic-clips]-a[firearm-magazine]-a",
     stack_size = 200

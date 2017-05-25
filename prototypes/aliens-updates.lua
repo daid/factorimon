@@ -3,7 +3,8 @@ local function alienLevels()
     local max_level = 27
     return function()
         n = n + 1
-        if n < max_level then return 0.7 + 0.6 * (n / 27.0), string.char(n + 64) end
+        local f = 1.0 - (n / max_level)
+        if n <= max_level then return 0.7 + 0.6 * f, string.char(n + 64) end
     end
 end
 
@@ -48,7 +49,7 @@ for name, prototype in pairs(data.raw["unit"]) do
             local alien = util.table.deepcopy(prototype)
             alien.name = new_alien_name
             alien.collision_box = fmOffsetCollision(alien.collision_box, 0.2)   --Enlarge the collision of the biters, so they don't try to squeeze between everything.
-            alien.localised_name = name .. sex .. level
+            alien.localised_name = {"fm-alien.name", {"entity-name."..name}, {"fm-alien.sex_"..sex}, level}
             alien.max_health = alien.max_health * quality
             alien.attack_parameters.cooldown = alien.attack_parameters.cooldown / quality   --Simple way to get weakers/stronger attacks is to adjust the cooldown for each alien.
             alien.movement_speed = alien.movement_speed * 0.8

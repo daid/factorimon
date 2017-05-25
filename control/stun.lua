@@ -11,7 +11,7 @@ script.on_event(defines.events.on_trigger_created_entity, function(event)
         local target = entities[1]
         --Target is now the entity that we hit. Check if it is what we want to stun.
         if not fmIsAlien(target) and target.prototype.max_health < 20 then
-            local level = string.char(64 + math.random(1, 10))
+            local level = string.char(64 + math.random(20, 27))
             local sex = "M"
             if math.random(100) < 50 then sex = "F" end
             local stunned = target.surface.create_entity{name="fm-stunned-"..target.name.."-"..sex..level, position=target.position, direction=target.direction}

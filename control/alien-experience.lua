@@ -3,8 +3,8 @@ function onKill(entity, kill)
     if fmIsAlien(entity) and fmIsAlien(kill) then
         local level = entity.name:byte(-1, -1) - 64
         local other_level = kill.name:byte(-1, -1) - 64
-        if level < 27 and level - other_level < math.random(1, 5) then
-            level = level + 1
+        if level > 1 and other_level - level < math.random(1, 5) then
+            level = level - 1
             local new_entity = {
                 name = entity.name:sub(1, -2) .. string.char(level + 64),
                 position = entity.position,

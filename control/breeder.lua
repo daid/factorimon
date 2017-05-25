@@ -1,4 +1,4 @@
-local BREEDER_AREA_SIZE = 3.0
+local BREEDER_AREA_SIZE = 4.0
 
 local function onNew(breeder, data)
     data.update_countdown = 30
@@ -40,6 +40,17 @@ function isBreederMatch(m, f)
     return false
 end
 
+function evolveTypeFrom(type)
+    --Hardcoded right now. So not mod compattible.
+    --TODO: use game.entity_prototypes to find the proper evolve type.
+    if type == "small-biter" then return "medium-biter" end
+    if type == "medium-biter" then return "big-biter" end
+    if type == "big-biter" then return "behemoth-biter" end
+    if type == "small-spitter" then return "medium-spitter" end
+    if type == "medium-spitter" then return "big-spitter" end
+    if type == "big-spitter" then return "behemoth-spitter" end
+end
+
 function onBreederUpdate(breeder, data)
     local male_canidate = nil
     local female_canidate = nil
@@ -68,14 +79,23 @@ function onBreederUpdate(breeder, data)
             local level_m = male_canidate.name:byte(-1, -1) - 64
             local level_f = female_canidate.name:byte(-1, -1) - 64
             local level = (level_m + level_f) / 2
-            local level_min = math.max(1, level - 4)
-            local level_max = math.min(27, level)
+            local level_min = math.max(1, level)
+            local level_max = math.min(27, level + 4)
             local type = male_canidate.name:sub(4, -4)
             for n=1,egg_count do
                 local level = string.char(64 + math.random(level_min, level_max))
                 local sex = "M"
+                local new_type = type
                 if math.random(100) < 50 then sex = "F" end
-                breeder.surface.spill_item_stack(center, {name="fm-egg-"..type.."-"..sex..level})
+                if level == "A" and math.random(0, 100) < 20 then
+                    new_type = evolveTypeFrom(type)
+                    if new_type == nil then
+                        new_type = type
+                    else
+                        level = string.char(64 + math.random(25, 27))
+                    end
+                end
+                breeder.surface.spill_item_stack(center, {name="fm-egg-"..new_type.."-"..sex..level})
             end
             --Kill the parents (use .damage() instead of .die() as .die() reports them as being destroyed to the player)
             male_canidate.damage(male_canidate.health * 10, male_canidate.force)

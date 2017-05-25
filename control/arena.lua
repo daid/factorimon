@@ -1,4 +1,4 @@
-local ARENA_AREA_SIZE = 3.0
+local ARENA_AREA_SIZE = 4.0
 
 local function onNew(entity, data)
     data.update_countdown = 30

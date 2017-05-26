@@ -35,13 +35,34 @@ data:extend({
     },
     animation =
     {
-        filename = "__factorimon__/graphics/entity/hatchery.png",
-        priority = "high",
-        width = 142,
-        height = 113,
-        frame_count = 1,
-        line_length = 1,
-        shift = {0.84, -0.09}
+        layers =
+        {
+            {
+                filename = "__factorimon__/graphics/entity/hatchery.png",
+                priority = "high",
+                width = 108,
+                height = 114,
+                frame_count = 8,
+                line_length = 8,
+                shift = {0, 2/32},
+                animation_speed = 0.25,
+                direction_count = 1,
+                run_mode = "forward-then-backward",
+            },
+            {
+                filename = "__base__/graphics/entity/assembling-machine-1/assembling-machine-1-shadow.png",
+                priority="high",
+                width = 95,
+                height = 83,
+                frame_count = 8,
+                line_length = 8,
+                draw_as_shadow = true,
+                shift = {8.5 / 32, 5.5 / 32},
+                animation_speed = 0.25,
+                direction_count = 1,
+                run_mode = "forward-then-backward",
+            }
+        }
     }
 },
 {

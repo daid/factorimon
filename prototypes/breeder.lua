@@ -76,6 +76,7 @@ data:extend({
             width = 150,
             height = 150,
             scale = 2.0,
+            tint = {r=1.0, g=0.8, b=0.8, a=0.1},
         },
     }
 },

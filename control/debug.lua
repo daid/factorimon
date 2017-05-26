@@ -4,6 +4,7 @@ if settings.global["fm-debug"].value then
         --Do not have enemies attack the player.
         --Players can still attack enemies.
         game.forces["enemy"].set_cease_fire(game.forces["player"], true)
+        game.forces["player"].character_running_speed_modifier = 3.0
         game.forces["player"].manual_mining_speed_modifier = 10.0
         game.forces["player"].manual_crafting_speed_modifier = 10.0
     end)

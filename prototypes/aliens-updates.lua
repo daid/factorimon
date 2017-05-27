@@ -77,6 +77,23 @@ for name, prototype in pairs(data.raw["unit"]) do
                 ingredients = {{ egg_name, 1}},
                 result = new_corpse_name
             })
+            
+            --Create the recipe that is used to harvest the alien in the slaughterhouse.
+            table.insert(new_prototypes, {
+                type = "recipe",
+                name = new_corpse_name,
+                icon = prototype.icon,
+                category = "fm-slaughtering",
+                subgroup = "raw-material",
+                energy_required = 10.0,
+                hidden = true,
+                ingredients = {{new_corpse_name, 1}},
+                results = {
+                    --TODO, define proper recipe results
+                    {name="iron-plate", amount=1},
+                    {name="copper-plate", amount=1},
+                }
+            })
         end
     end
 end

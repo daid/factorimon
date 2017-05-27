@@ -9,7 +9,7 @@ data:extend({
 {
     type = "furnace",
     name = "fm-hatchery",
-    icon = "__base__/graphics/icons/biter-spawner.png",
+    icon = "__factorimon__/graphics/icons/hatchery.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {mining_time = 1, result = "fm-hatchery"},
     max_health = 200,
@@ -68,7 +68,7 @@ data:extend({
 {
     type = "item",
     name = "fm-hatchery",
-    icon = "__base__/graphics/icons/biter-spawner.png",
+    icon = "__factorimon__/graphics/icons/hatchery.png",
     flags = {"goes-to-quickbar"},
     subgroup = "smelting-machine",
     order = "z",

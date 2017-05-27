@@ -89,11 +89,11 @@ for name, prototype in pairs(data.raw["unit"]) do
                 hidden = true,
                 ingredients = {{new_corpse_name, 1}},
                 results = {
-                    --TODO, define proper recipe results
-                    {name="iron-plate", amount=1},
-                    {name="copper-plate", amount=1},
+                    {name="fm-raw-meat", amount=alien.max_health * quality * 0.2},
+                    {name="fm-blood", amount=alien.max_health * quality, type="fluid"},
                 }
             })
+            --probability
         end
     end
 end

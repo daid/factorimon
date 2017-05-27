@@ -3,6 +3,8 @@ local SLAUGHTERHOUSE_INPUT_X = 0.0
 local SLAUGHTERHOUSE_INPUT_Y = 1.5
 
 function onNew(entity, data)
+    entity.rotatable = false
+    entity.direction = defines.direction.north
 end
 
 function onDelete(entity, data)

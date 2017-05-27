@@ -25,10 +25,22 @@ data:extend({
         idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
         apparent_volume = 1.5,
     },
+    fluid_boxes =
+    {
+        {
+            production_type = "output",
+            pipe_picture = assembler2pipepictures(),
+            pipe_covers = pipecoverspictures(),
+            base_area = 10,
+            base_level = 1,
+            pipe_connections = {{ type="output", position = {0, -2} }},
+            secondary_draw_orders = { north = -1 }
+        },
+    },
     collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     crafting_categories = {"fm-slaughtering"},
-    result_inventory_size = 3,
+    result_inventory_size = 1,
     energy_usage = "180kW",
     crafting_speed = 1,
     source_inventory_size = 1,

@@ -60,4 +60,23 @@ data:extend({
     },
     order = "z"
 },
+{
+    type = "technology",
+    name = "fm-alien-harvesting",
+    icon = "__factorimon__/graphics/technology/alien-harvesting.png",
+    icon_size = 128,
+    effects = { { type = "unlock-recipe", recipe = "fm-slaughterhouse" } },
+    prerequisites = {"automation-2", "fm-alien-capture"},
+    unit =
+    {
+        count = 100,
+        ingredients =
+        {
+            {"science-pack-1", 1},
+            {"science-pack-2", 1}
+        },
+        time = 30
+    },
+    order = "z"
+},
 })

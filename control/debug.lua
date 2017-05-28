@@ -21,6 +21,7 @@ if settings.global["fm-debug"].value then
         player.insert("fm-arena")
         player.insert("fm-hatchery")
         player.insert("fm-alien-sensor")
+        player.insert("fm-slaughterhouse")
         player.insert("stone-wall")
         
         player.insert("iron-plate")
